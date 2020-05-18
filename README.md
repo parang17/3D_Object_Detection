@@ -47,8 +47,7 @@ Run several detector / descriptor combinations and look at the differences in TT
 Based on the previous comparison assessment (https://github.com/parang17/Sensor-Fusion-Feature-Tracking), I ranked three different combinations: FAST+BRIEF, FAST+ORB, ORB+BRIEF.
 The result show that FAST+BRIEF is the best since standard deviation is smaller than others. The thrid case, one estimated TTC result is inf. Therefore, it cannot compute the mean and standard deviation.     
 
-* All combinations
-Table 3. Summary of all the detection/extraction/matching 
+* All combinations of key point detection an descriptor
 | Combination(detect + descriptor)| TTC Mean (sec)      | TTC Standard deviation(sec) | 
 | ---                             | ---                 | ---                         |                 
 | Shi-Tomasi + SIFT               |      12.0737        |    1.09771                  |
