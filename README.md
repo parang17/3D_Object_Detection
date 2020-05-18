@@ -48,6 +48,7 @@ Based on the previous comparison assessment (https://github.com/parang17/Sensor-
 The result show that FAST+BRIEF is the best since standard deviation is smaller than others. The thrid case, one estimated TTC result is inf. Therefore, it cannot compute the mean and standard deviation.     
 
 * All combinations of key point detection an descriptor
+Table Summary of results
 | Combination(detect + descriptor)| TTC Mean (sec)      | TTC Standard deviation(sec) | 
 | ---                             | ---                 | ---                         |                 
 | Shi-Tomasi + SIFT               |      12.0737        |    1.09771                  |
@@ -91,6 +92,6 @@ The result show that FAST+BRIEF is the best since standard deviation is smaller 
 | Rank | Combination(detect + descriptor)   | Mean   | Standard deviation    |
 | ---- | ---                                | ---    |  ---                  |
 | 1    | FAST + BRIEF                       |12.5101 | 3.22864               |
-| 2    | FAST + ORB                         |13.7737|    4.49047             | 
+| 2    | FAST + ORB                         |13.7737 |    4.49047            | 
 | 3    | ORB + BRIEF                        | N/A    | N/A                   |     
 
