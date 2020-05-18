@@ -30,14 +30,14 @@ The aim of this project computes the time to collision based on the LiDAR and ca
 
 ## Performance Evaluation 1
 Find examples where the TTC estimate of the Lidar sensor does not seem plausible. Describe your observations and provide a sound argumentation why you think this happened.
-The following three figures show that the third figure's TTC slightly increases compared to the previous two, first and second results. 
+The following three figures show that the third figure's TTC slightly increases compared to the previous two, first and second results. The reason is that collected LiDAR on the third data has more noisy compared to the previous. The following figures visually present two different point cloud. To resolve this one, 
+it requires outlier detection and elimination instead of using the average or median values.
 
 <img src="images/1.png" width="779" height="414" />
 <img src="images/2.png" width="779" height="414" />
 <img src="images/3.png" width="779" height="414" />
 
-The reason is that collected LiDAR on the third data has more noisy compared to the previous. The following figures visually present two different point cloud. To resolve this one, 
-it requires outlier detection and elimination instead of using the average or median values.
+
 <img src="images/2-LiDAR.png" width="779" height="414" />
 <img src="images/3-LiDAR.png" width="779" height="414" />
 
