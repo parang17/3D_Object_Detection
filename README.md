@@ -45,9 +45,9 @@ it requires outlier detection and elimination instead of using the average or me
 Run several detector / descriptor combinations and look at the differences in TTC estimation. Find out which methods perform best and also include several examples where camera-based TTC estimation is way off. As with Lidar, describe your observations again and also look into potential reasons.
 
 Based on the previous comparison assessment (https://github.com/parang17/Sensor-Fusion-Feature-Tracking), I ranked three different combinations: FAST+BRIEF, FAST+ORB, ORB+BRIEF.
-The result show that FAST+BRIEF is the best since standard deviation is smaller than others. The thrid case, one estimated TTC result is inf. Therefore, it cannot compute the mean and standard deviation.     
+The result show that FAST+BRIEF is the best since standard deviation is smaller than others. The thrid case, one estimated TTC result is inf. Therefore, it cannot compute the mean and standard deviation. 3
 
-* All combinations of key point detection an descriptor
+## All combinations of key point detection an descriptor
 Table Summary of results
 | Combination(detect + descriptor)| TTC Mean (sec)      | TTC Standard deviation(sec) | 
 | ---                             | ---                 | ---                         |                 
@@ -87,8 +87,7 @@ Table Summary of results
 | SIFT + BRIEF                    |      12.9706        |    3.81752                  |
 
 
-
-* Top three summary 
+## Top three summary 
 | Rank | Combination(detect + descriptor)   | Mean   | Standard deviation    |
 | ---- | ---                                | ---    |  ---                  |
 | 1    | FAST + BRIEF                       |12.5101 | 3.22864               |
