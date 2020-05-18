@@ -32,23 +32,24 @@ The aim of this project computes the time to collision based on the LiDAR and ca
 Find examples where the TTC estimate of the Lidar sensor does not seem plausible. Describe your observations and provide a sound argumentation why you think this happened.
 The following three figures show that the third figure's TTC slightly increases compared to the previous two, first and second results. 
 
-<img src="images/1.png" width="779" height="414" />
-<img src="images/2.png" width="779" height="414" />
-<img src="images/3.png" width="779" height="414" />
+<img src="images/1.png" width="600" height="414" />
+<img src="images/2.png" width="600" height="414" />
+<img src="images/3.png" width="600" height="414" />
 
-The reason is that collected LiDAR on the third data has more noisy compared to the previous. The following figures visually present two different point cloud. To resolve this one, 
+The reason is that collected LiDAR on the third data has more noisy compared to the previous. The following figures visually present two different point cloud. To resolve this one.
+
 it requires outlier detection and elimination instead of using the average or median values.
-<img src="images/2-LiDAR.png" width="779" height="414" />
-<img src="images/3-LiDAR.png" width="779" height="414" />
+<img src="images/2-LiDAR.png" width="600" height="414" />
+<img src="images/3-LiDAR.png" width="600" height="414" />
 
 ## Performance Evaluation 2
 Run several detector / descriptor combinations and look at the differences in TTC estimation. Find out which methods perform best and also include several examples where camera-based TTC estimation is way off. As with Lidar, describe your observations again and also look into potential reasons.
 
 Based on the previous comparison assessment (https://github.com/parang17/Sensor-Fusion-Feature-Tracking), I ranked three different combinations: FAST+BRIEF, FAST+ORB, ORB+BRIEF.
-The result show that FAST+BRIEF is the best since standard deviation is smaller than others. The thrid case, one estimated TTC result is inf. Therefore, it cannot compute the mean and standard deviation.     
+The result show that FAST+BRIEF is the best since standard deviation is smaller than others. The thrid case, one estimated TTC result is inf. Therefore, it cannot compute the mean and standard deviation. 3
 
-* All combinations
-Table 3. Summary of all the detection/extraction/matching 
+## All combinations of key point detection an descriptor
+Table Summary of results
 | Combination(detect + descriptor)| TTC Mean (sec)      | TTC Standard deviation(sec) | 
 | ---                             | ---                 | ---                         |                 
 | Shi-Tomasi + SIFT               |      12.0737        |    1.09771                  |
@@ -87,11 +88,11 @@ Table 3. Summary of all the detection/extraction/matching
 | SIFT + BRIEF                    |      12.9706        |    3.81752                  |
 
 
-
-* Top three summary 
+## Top three summary 
 | Rank | Combination(detect + descriptor)   | Mean   | Standard deviation    |
 | ---- | ---                                | ---    |  ---                  |
 | 1    | FAST + BRIEF                       |12.5101 | 3.22864               |
-| 2    | FAST + ORB                         |13.7737|    4.49047             | 
+| 2    | FAST + ORB                         |13.7737 |    4.49047            | 
 | 3    | ORB + BRIEF                        | N/A    | N/A                   |     
+
 
