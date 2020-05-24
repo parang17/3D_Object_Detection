@@ -27,8 +27,27 @@ The aim of this project computes the time to collision based on the LiDAR and ca
 3. Compile: `cmake .. && make`
 4. Run it: `./3D_object_tracking`.
 
+## FP.1 Match 3D Objects
+Implement the method "matchBoundingBoxes", which takes as input both the previous and the current data frames and provides as output the ids of the matched regions of interest (i.e. the boxID property). Matches must be the ones with the highest number of keypoint correspondences.
 
-## Performance Evaluation 1
+- The algorithm selects the highest number of occurence
+
+## FP.2 Compute Lidar-based TTC
+Compute the time-to-collision in second for all matched 3D objects using only Lidar measurements from the matched bounding boxes between current and previous frame.
+
+- Instead of the median value, here I applied the median value. In this way, we can avoid the outlier impact.
+
+## FP.3 Associate Keypoint Correspondences with Bounding Boxes
+Prepare the TTC computation based on camera measurements by associating keypoint correspondences to the bounding boxes which enclose them. All matches which satisfy this condition must be added to a vector in the respective bounding box.
+
+- The code generates kptMatches properties and removed the unnecessary points based on minimum distance constraint
+## FP.4 Compute Camera-based TTC
+Compute the time-to-collision in second for all matched 3D objects using only keypoint correspondences from the matched bounding boxes between current and previous frame.
+
+- The code only handles the matched bounding boxes between current and previous frame. TTC is computed from both average values of previous and current.
+
+
+## FP.5 Performance Evaluation 1
 Find examples where the TTC estimate of the Lidar sensor does not seem plausible. Describe your observations and provide a sound argumentation why you think this happened.
 The following three figures show that the third figure's TTC slightly increases compared to the previous two, first and second results. 
 
@@ -42,14 +61,13 @@ it requires outlier detection and elimination instead of using the average or me
 <img src="images/2-LiDAR.png" width="600" height="414" />
 <img src="images/3-LiDAR.png" width="600" height="414" />
 
-## Performance Evaluation 2
+## FP.6 Performance Evaluation 2
 Run several detector / descriptor combinations and look at the differences in TTC estimation. Find out which methods perform best and also include several examples where camera-based TTC estimation is way off. As with Lidar, describe your observations again and also look into potential reasons.
 
 Based on the previous comparison assessment (https://github.com/parang17/Sensor-Fusion-Feature-Tracking), I ranked three different combinations: FAST+BRIEF, FAST+ORB, ORB+BRIEF.
-The result show that FAST+BRIEF is the best since standard deviation is smaller than others. The thrid case, one estimated TTC result is inf. Therefore, it cannot compute the mean and standard deviation. 3
+The result show that FAST+BRIEF is the best since standard deviation is smaller than others. The third case, one estimated TTC result is inf. Therefore, it cannot compute the mean and standard deviation. 3
 
 ## All combinations of key point detection an descriptor
-Table Summary of results
 | Combination(detect + descriptor)| TTC Mean (sec)      | TTC Standard deviation(sec) | 
 | ---                             | ---                 | ---                         |                 
 | Shi-Tomasi + SIFT               |      12.0737        |    1.09771                  |
